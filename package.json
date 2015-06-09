@@ -1,13 +1,13 @@
 {
-  "name": "sails-generate-calistyle/humpback-model",
+  "name": "sails-generate-humpback-model",
   "version": "0.10.0",
-  "description": "sails generate CaliStyle/humpback-model",
+  "description": "sails generate humpback-model",
   "main": "Generator.js",
   "scripts": {
     "test": "mocha"
   },
   "keywords": [
-    "CaliStyle/humpback-model",
+    "humpback-model",
     "generator",
     "sails",
     "generate",
@@ -25,8 +25,8 @@
     "fs-extra": "*"
   },
   "sailsGenerator": {
-    "type": "CaliStyle/humpback-model",
-    "behavior": "overrides `sails generate CaliStyle/humpback-model`",
+    "type": "humpback-model",
+    "behavior": "overrides `sails generate humpback-model`",
     "sailsVersion": "~0.10.0"
   }
 }
