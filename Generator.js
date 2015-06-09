@@ -59,10 +59,12 @@ module.exports = {
     });
 
     // Decide the output filename for use in targets below:
-    scope.filename = scope.args[0];
+    scope.modelname = scope.args[0].toLowerCase();
+    scope.Modelname = scope.args[0].charAt(0).toUpperCase() + scope.args[0].slice(1);
+    scope.filename = scope.args[0].charAt(0).toUpperCase() + scope.args[0].slice(1) + '.js';
 
     // Add other stuff to the scope for use in our templates:
-    scope.whatIsThis = 'an example file created at '+scope.createdAt;
+    scope.whatIsThis = 'humpback-model created at '+scope.createdAt;
 
     // When finished, we trigger a callback with no error
     // to begin generating files/folders as specified by
@@ -88,10 +90,12 @@ module.exports = {
     // The `template` helper reads the specified template, making the
     // entire scope available to it (uses underscore/JST/ejs syntax).
     // Then the file is copied into the specified destination (on the left).
-    './:filename': { template: 'example.template.js' },
-
+    //'./:filename': { template: 'example.template.js' },
+    './assets/app/models/:filename' : {template : 'model.template.js'},
+    './': ['model'],
+    
     // Creates a folder at a static path
-    './hey_look_a_folder': { folder: {} }
+    //'./hey_look_a_folder': { folder: {} }
 
   },
 
