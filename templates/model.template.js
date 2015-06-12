@@ -3,7 +3,7 @@
 * Global <%= Modelname %>. Model
 * <%= whatIsThis %>
 **/
-angular.module('models.<%= modelname %>', [
+angular.module('<%= modelname %>.model', [
     'humpback.models'
 ])
 
