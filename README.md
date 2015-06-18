@@ -1,5 +1,9 @@
 # sails-generate-humpback-model
 
+## Status
+
+> ##### Stability: [1](http://nodejs.org/api/documentation.html#documentation_stability_index) - Experimental
+
 A `humpback-model` generator for use with the Sails command-line interface.
 
 Certain generators are installed by default in Sails, but they can be overridden.  Other generators create entirely new things.  Check the [Sails docs](http://sailsjs.org/#!documentation) for information on installing generator overrides / custom generators and information on building your own generators.
