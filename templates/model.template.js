@@ -12,9 +12,9 @@ angular.module('<%= modelname %>.model', [
 * Run and ignore for unit testing
 * 
 **/
-.run(function($sailsSocket, DS, <%= Modelname %>Service){
+.run(function($sailsSocket, DS, <%= Modelname %>Service, utils){
+	if(utils.development()){ console.log("listening to <%= modelname %> changes")};
 	
-	console.log("listening to <%= modelname %> changes");
     $sailsSocket.subscribe('<%= modelname %>', function(envelope){
         //console.log(envelope);
         <%= Modelname %>Service.handler[envelope.verb](envelope)
