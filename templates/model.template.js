@@ -13,7 +13,7 @@ angular.module('<%= modelname %>.model', [
 * 
 **/
 .run(function($sailsSocket, DS, <%= Modelname %>Service, utils){
-	if(utils.development()){ console.log("listening to <%= modelname %> changes")};
+	if(utils.development()){ console.log("HUMPBACK: listening to <%= modelname %> changes")};
 	
     $sailsSocket.subscribe('<%= modelname %>', function(envelope){
         //console.log(envelope);
@@ -30,7 +30,7 @@ angular.module('<%= modelname %>.model', [
         storageMode: 'localStorage',
         idAttribute: 'id',
         endpoint: '/<%= modelname %>',
-        baseUrl: '/api',
+        baseUrl: window._prefix || '/api',
         
         /**
         * @description 
