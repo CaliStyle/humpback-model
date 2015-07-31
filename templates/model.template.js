@@ -13,7 +13,7 @@ angular.module('<%= modelname %>.model', [
 * 
 **/
 .run(function($sailsSocket, DS, <%= Modelname %>Service, utils){
-	if(utils.development()){ console.log("HUMPBACK: listening to <%= modelname %> changes")};
+	if(utils.development()){ console.log(window._name,': listening to <%= modelname %> changes')};
 	
     $sailsSocket.subscribe('<%= modelname %>', function(envelope){
         //console.log(envelope);
@@ -25,7 +25,7 @@ angular.module('<%= modelname %>.model', [
         maxAge: 36000000,
         deleteOnExpire: 'none',
         onExpire: function (id, <%= modelname %>) {
-            console.log(id, "<%= Modelname %> Expired");
+            console.log(id, '<%= Modelname %> Expired');
         },
         storageMode: 'localStorage',
         idAttribute: 'id',
@@ -85,7 +85,7 @@ angular.module('<%= modelname %>.model', [
     * 
     **/
 	_handler.created = function(envelope){
-        "use strict";
+        'use strict';
         DS.inject('<%= modelname %>', envelope.data);
         console.log(envelope);
 
@@ -97,7 +97,7 @@ angular.module('<%= modelname %>.model', [
     * 
     **/
     _handler.deleted = function(envelope){
-        "use strict";
+        'use strict';
         DS.eject('<%= modelname %>', envelope.data);
         console.log(envelope);
 
@@ -109,7 +109,7 @@ angular.module('<%= modelname %>.model', [
     * 
     **/
     _handler.updated = function(envelope){
-        "use strict";
+        'use strict';
         console.log(envelope);
         if(envelope.data){
             envelope.data.id = envelope.id;
@@ -126,7 +126,7 @@ angular.module('<%= modelname %>.model', [
     * 
     **/
     _handler.addedTo = function(envelope){
-        "use strict";
+        'use strict';
         console.log(envelope);
     };
 
@@ -136,7 +136,7 @@ angular.module('<%= modelname %>.model', [
     * 
     **/
     _handler.removedFrom = function(envelope){
-        "use strict";
+        'use strict';
         console.log(envelope);
     };
 
@@ -146,7 +146,7 @@ angular.module('<%= modelname %>.model', [
     * 
     **/
     _handler.messaged = function(envelope){
-        "use strict";
+        'use strict';
         console.log(envelope);
     };
 
